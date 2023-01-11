@@ -101,6 +101,9 @@
       thisProduct.priceElem = thisProduct.element.querySelector(
         select.menuProduct.priceElem
       );
+      thisProduct.imageWrapper = thisProduct.element.querySelector(
+        select.menuProduct.imageWrapper
+      );
     }
 
     initAccordion() {
@@ -169,8 +172,17 @@
           // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
           const option = param.options[optionId];
           console.log(optionId, option);
+          // select image matching currently selected optionId and paramId
+          const productImage = thisProduct.imageWrapper.querySelector(
+            '.' + paramId + '-' + optionId
+          );
           // check if paramId key exists in formData and if it includes optionsId in array value
           if (formData[paramId] && formData[paramId].includes(optionId)) {
+            // add image matching selected input if image with that class exist
+            if (productImage) {
+              productImage.classList.add(classNames.menuProduct.imageVisible);
+            }
+
             // if that option is not default
             if (!option.default) {
               // increase price
@@ -178,6 +190,12 @@
             }
             // if it's not in array with checked values
           } else {
+            // remove image matching not selected input if image with that class exist
+            if (productImage) {
+              productImage.classList.remove(
+                classNames.menuProduct.imageVisible
+              );
+            }
             // check if otion is default
             if (option.default) {
               // decrease price
