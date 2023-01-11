@@ -176,13 +176,10 @@
           const productImage = thisProduct.imageWrapper.querySelector(
             '.' + paramId + '-' + optionId
           );
-          // check if paramId key exists in formData and if it includes optionsId in array value
-          if (formData[paramId] && formData[paramId].includes(optionId)) {
-            // add image matching selected input if image with that class exist
-            if (productImage) {
-              productImage.classList.add(classNames.menuProduct.imageVisible);
-            }
-
+          // create boolean checking if paramId key exists in formData and if it includes optionsId in array value
+          const optionSelected =
+            formData[paramId] && formData[paramId].includes(optionId);
+          if (optionSelected) {
             // if that option is not default
             if (!option.default) {
               // increase price
@@ -190,16 +187,22 @@
             }
             // if it's not in array with checked values
           } else {
-            // remove image matching not selected input if image with that class exist
-            if (productImage) {
-              productImage.classList.remove(
-                classNames.menuProduct.imageVisible
-              );
-            }
-            // check if otion is default
+            // check if option is default
             if (option.default) {
               // decrease price
               price -= option.price;
+            }
+          }
+          // check if image with class matching selected product exist
+          if (productImage) {
+            if (optionSelected) {
+              // add image matching selected input
+              productImage.classList.add(classNames.menuProduct.imageVisible);
+            } else {
+              // remove image matching not selected input
+              productImage.classList.remove(
+                classNames.menuProduct.imageVisible
+              );
             }
           }
         }
