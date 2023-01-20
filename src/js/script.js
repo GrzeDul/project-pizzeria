@@ -508,13 +508,7 @@
         },
         body: JSON.stringify(payload),
       };
-      fetch(url, options)
-        .then(function (res) {
-          return res.json();
-        })
-        .then(function (res) {
-          console.log('parsedResponse: ', res);
-        });
+      fetch(url, options);
     }
   }
 
@@ -625,15 +619,11 @@
           return rawResponse.json();
         })
         .then(function (parsedResponse) {
-          console.log('parsedResponse ', parsedResponse);
-
           /* save parsedResponse as thisApp.data.products */
           thisApp.data.products = parsedResponse;
           /* execute initMenu method */
           thisApp.initMenu();
         });
-
-      console.log('thisApp.data: ', JSON.stringify(thisApp.data));
     },
     init: function () {
       const thisApp = this;
