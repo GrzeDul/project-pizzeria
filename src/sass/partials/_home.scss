@@ -1,0 +1,194 @@
+.home-page {
+  background: #ffffff;
+  margin-top: 40px;
+  padding: 70px 45px;
+
+  .page-info {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 7px;
+    color: #ffffff;
+    text-transform: uppercase;
+    height: 280px;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h3,
+    h2,
+    a {
+      margin: 0;
+    }
+
+    h2,
+    a {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .block-long {
+      grid-column: span 2;
+      background: #ff6b6b;
+      flex-direction: column;
+    }
+
+    .first {
+      background: #000 url('../../images/homePage/pizza-1.jpg');
+    }
+
+    .second {
+      background: #000 url('../../images/homePage/pizza-2.jpg');
+    }
+
+    .first,
+    .second {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .block-short {
+      flex-direction: column;
+      position: relative;
+      cursor: pointer;
+
+      h3 {
+        text-transform: none;
+        margin-top: 15px;
+        visibility: hidden;
+        font-weight: 400;
+      }
+
+      h3,
+      h2 {
+        transform: translateY(15px);
+        transition: 0.5s all;
+      }
+
+      &:hover h3,
+      &:hover h2 {
+        transform: translateY(-15px);
+        visibility: visible;
+      }
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .carousel {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+    padding: 20px 0;
+    position: relative;
+
+    .carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-card {
+      display: flex;
+      height: 200px;
+      position: absolute;
+      transition: 1s;
+      z-index: -10;
+    }
+
+    .left {
+      top: 0;
+      left: -100%;
+    }
+
+    .right {
+      top: 0;
+      left: 200%;
+    }
+
+    .active {
+      position: relative;
+      right: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    img {
+      width: 200px;
+      object-fit: cover;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      padding: 15px 0 0 30px;
+    }
+
+    p,
+    h3 {
+      margin: 0 0 15px 0;
+    }
+
+    h3 {
+      text-transform: uppercase;
+    }
+
+    .name {
+      margin: 0;
+      text-transform: capitalize;
+      font-style: italic;
+    }
+
+    .dot-picker {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      transform: translateY(30px);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: #cdcdcd;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+
+      &.active {
+        background: #333333;
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      font-size: 80px;
+      color: #cdcdcd;
+      opacity: 0;
+      background: none;
+      border: none;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 20;
+
+      &:hover {
+        opacity: 100%;
+      }
+    }
+  }
+
+  .arrow-left {
+    left: 0;
+  }
+
+  .arrow-right {
+    right: 0;
+  }
+}
