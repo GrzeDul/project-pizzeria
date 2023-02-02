@@ -78,6 +78,7 @@ export const select = {
     slides: '.carousel-card',
     leftArrow: '.arrow-left',
     rightArrow: '.arrow-right',
+    galleryImages: '.img-wrapper',
   },
 };
 

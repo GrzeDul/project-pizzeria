@@ -26,6 +26,9 @@ class Home {
     thisHome.dom.rightArrow = thisHome.carouselWrapper.querySelector(
       select.homePage.rightArrow
     );
+    thisHome.dom.galleryImages = thisHome.dom.wrapper.querySelectorAll(
+      select.homePage.galleryImages
+    );
     thisHome.makeCarousel();
   }
 
@@ -78,11 +81,6 @@ class Home {
     thisHome.dom.dotPickerDiv.addEventListener('click', function (event) {
       if (event.target.classList.contains('dot')) {
         thisHome.currentID = event.target.id.split('t')[1];
-        // if (thisHome.currentID === thisHome.lastSlideNum) {
-        //   thisHome.lastID = 1;
-        // } else if (thisHome.currentID === 1) {
-        //   thisHome.lastID = thisHome.lastSlideNum;
-        // } else {
         thisHome.moveSlide();
       }
     });
@@ -96,6 +94,7 @@ class Home {
 
     const check = function (side) {
       const opposite = side === 'right' ? 'left' : 'right';
+
       for (const slide of thisHome.dom.carouselSlides) {
         if (slide.id === 'slide' + thisHome.lastID) {
           slide.classList.remove(classNames.homePage.active, opposite);
@@ -109,6 +108,7 @@ class Home {
         }
       }
     };
+
     if (thisHome.lastID === 1 && thisHome.currentID === thisHome.lastSlideNum) {
       check(right);
     } else if (
