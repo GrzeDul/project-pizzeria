@@ -1,5 +1,5 @@
-.home-page {
-  background: #ffffff;
+import varia .home-page {
+  background: $color-light;
   margin-top: 40px;
   padding: 70px 45px;
 
@@ -8,7 +8,7 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     grid-gap: 7px;
-    color: #ffffff;
+    color: $color-light;
     text-transform: uppercase;
     margin-bottom: 50px;
     height: 280px;
@@ -35,16 +35,16 @@
 
     .block-long {
       grid-column: span 2;
-      background: #ff6b6b;
+      background: $color-main;
       flex-direction: column;
     }
 
     .first {
-      background: #000 url('../../images/homePage/pizza-1.jpg');
+      background: $color-dark url('../../images/homePage/pizza-1.jpg');
     }
 
     .second {
-      background: #000 url('../../images/homePage/pizza-2.jpg');
+      background: $color-dark url('../../images/homePage/pizza-2.jpg');
     }
 
     .first,
@@ -78,7 +78,7 @@
       }
 
       a {
-        color: #ffffff;
+        color: $color-light;
         text-decoration: none;
       }
     }
@@ -157,20 +157,20 @@
     .dot {
       width: 10px;
       height: 10px;
-      background: #cdcdcd;
+      background: $color-light;
       border-radius: 50%;
       margin: 0 5px;
       cursor: pointer;
 
       &.active {
-        background: #333333;
+        background: $color-dark;
       }
     }
 
     .arrow {
       position: absolute;
       font-size: 80px;
-      color: #cdcdcd;
+      color: $color-light;
       opacity: 0;
       background: none;
       border: none;
@@ -201,7 +201,7 @@
 
     .img-wrapper {
       position: relative;
-      background: #333333;
+      background: $color-dark;
       max-width: 200px;
       max-height: 200px;
       display: flex;
@@ -236,19 +236,19 @@
     .fas {
       font-size: 15px;
       z-index: 2;
-      color: #fff;
+      color: $color-light;
       margin: 0 7px;
       transition: 0.4s;
     }
 
     a:hover > .fas {
       transform: scale(1.6);
-      color: $main-color;
+      color: $color-main;
     }
 
     ~ .view-more {
       margin-top: 20px;
-      color: $main-color;
+      color: $color-main;
       transition: 0.2s;
 
       &:hover,
