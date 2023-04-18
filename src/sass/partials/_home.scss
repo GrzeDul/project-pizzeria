@@ -1,4 +1,4 @@
-import varia .home-page {
+.home-page {
   background: $color-light;
   margin-top: 40px;
   padding: 70px 45px;
@@ -157,7 +157,7 @@ import varia .home-page {
     .dot {
       width: 10px;
       height: 10px;
-      background: $color-light;
+      background: $color-grey;
       border-radius: 50%;
       margin: 0 5px;
       cursor: pointer;
@@ -170,7 +170,7 @@ import varia .home-page {
     .arrow {
       position: absolute;
       font-size: 80px;
-      color: $color-light;
+      color: $color-grey;
       opacity: 0;
       background: none;
       border: none;
